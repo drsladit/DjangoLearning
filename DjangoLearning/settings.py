@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'articles',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -62,7 +63,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                 'django.contrib.messages.context_processors.messages',
+                'django.contrib.messages.context_processors.messages',
             ],
         },
     },
@@ -118,4 +119,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+"""
 STATIC_URL = '/static/'
+
+import os
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'assets'), #BASE_DIR - base directory built in django which looks project directoru
+
+)
+
+"""
+
+import os
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+VENV_PATH = os.path.dirname(BASE_DIR)
+STATIC_ROOT = os.path.join(VENV_PATH, 'static_root')
+

@@ -1,0 +1,12 @@
+{% extends 'base_layout.html' %}
+
+
+{% block content %}
+    <div class="article-titles">
+        {%for article1 in article%}
+            <div class="article">
+                <h2><a href="{% url 'articles:details' slug=article1.slug%}">{{article1.title}}</a></h2>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
